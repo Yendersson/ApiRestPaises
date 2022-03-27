@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REST Countries</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Where in the world?</h1>
+        <div id="dark-mode"><img id="moon" src="img/moon.svg" alt=""><span>DarkMode</span></div>
+    </header>
+
+    <main>
+        <div class="flex-input">
+            <input type="search" name="" id="buscador" placeholder="Search for a Country...">
+            <select name="" id="filtrar">
+                <option value="">Filter by Region</option>
+                <option value="Americas">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Africa">Africa</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+
+        <section id="templates-countries" class="flex-flags">
+            
+            <!--HANDLEBARS-->
+        <script id="template" type="text/x-handlebars-template">
+            {{#each data}}
+            <div class="card">
+                 <img src="{{flags.svg}}" alt="">
+                 <h2>{{name}}</h2>
+                 <p><span>Population:</span> {{population}}</p>
+                 <p><span>Region:</span> {{region}}</p>
+                 <p><span>Capital:</span> {{capital}}</p>
+            </div>
+            {{/each}}
+        </script>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="script/funciones.js"></script>
+    <script src="script/index.js"></script>
+</body>
+
+</html>
