@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/pais.css">
 </head>
+
 <body>
+    <header>
+        <h1>Where in the world?</h1>
+        <div id="dark-mode"><img id="moon" src="img/moon.svg" alt=""><span>DarkMode</span></div>
+    </header>
+
+    <main class="contenedor">
+        <button id="regresar"><img src="" alt="">Back</button>
+        <div id="handlebar">
+            
+            <script id="template" type="text/x-handlebars-template">
+        <section>   
+
+            <div>    
+                <img src="{{flag}}" alt="">
+                <h2>{{name}}</h2>
+                <p><span>Native Name:</span> {{nativeName}}</p>
+                <p><span>Population:</span> {{population}}</p>
+                <p><span>Region:</span> {{Region}}</p>
+                <p><span>Sub Region:</span> {{subregion}}</p>
+                <p><span>Capital:</span> {{capital}}</p>
+            </div>
+
+            <div>
+                <p><span>Top Level Domain:</span> {{topLevelDomain}}</p>
+                <p><span>Currencies:</span> {{#each currencies}} {{code}}, {{name}}, {{symbol}} {{/each}}</p>
+                <p><span>Languages:</span> {{#each languages}} {{name}}, {{/each}}</p>
+            </div>
+        </section>
+
+        <h3>Border Countries:</h3>
+        <div class="flex-borders">
+        {{#each borders}}
+        
+        <div><p>{{this}}</p></div>
+        
+        {{/each}}
+    </div>
+    </script>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="script/pais.js"></script>
+
 </html>

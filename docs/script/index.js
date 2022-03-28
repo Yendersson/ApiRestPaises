@@ -51,6 +51,17 @@ fetch('https://restcountries.com/v2/all')
             let data = datos.data.filter(pais => pais.region == desplegar.value);
             let objSelect = { data };
             handl(objSelect)
+
+            document.querySelectorAll('h2').forEach(element => {
+                element.addEventListener('click', (e) => {
+                    console.log(e.target);
+                    contenidoCard = e.target
+                    localStorage.setItem('pais', contenidoCard.innerHTML);
+                    window.location.href = 'pais.html';
+                })
+            });
+
+
         })
         //Buscador
         buscar.addEventListener('input', () => {
@@ -60,9 +71,12 @@ fetch('https://restcountries.com/v2/all')
                 handl(obj);
 
                 console.log(document.querySelectorAll('.card'))
-                document.querySelectorAll('.card').forEach(element => {
+                document.querySelectorAll('h2').forEach(element => {
                     element.addEventListener('click', (e) => {
-                        console.log(e.currentTarget);
+                        console.log(e.target);
+                        contenidoCard = e.target
+                        localStorage.setItem('pais', contenidoCard.innerHTML);
+                        window.location.href = 'pais.html';
                     })
                 });
 
@@ -73,17 +87,12 @@ fetch('https://restcountries.com/v2/all')
         });
 
         //console.log(document.querySelectorAll('.card'))
-        document.querySelectorAll('.card').forEach(element => {
+        document.querySelectorAll('h2').forEach(element => {
             element.addEventListener('click', (e) => {
-               // console.log(e.currentTarget);
-               
-                contenidoCard = e.currentTarget;
+                contenidoCard = e.target;
                 console.log(contenidoCard.innerHTML);
-                
-                //localStorage.setItem('nombre', document.querySelectorAll('h2').innerHTML);
-                //window.location.href = '/pais.html';
-               
-               // console.log(contenidoCard);
+                localStorage.setItem('pais', contenidoCard.innerHTML);
+                window.location.href = 'pais.html';
             })
         });
 
