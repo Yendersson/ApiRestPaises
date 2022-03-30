@@ -21,23 +21,25 @@
             
             <script id="template" type="text/x-handlebars-template">
         <section>   
-
-            <div>    
-                <img src="{{flag}}" alt="">
+            <img src="{{flag}}" alt="">
+            <div>
                 <h2>{{name}}</h2>
+                <div class="flex-informacion">
+               <div> 
                 <p><span>Native Name:</span> {{nativeName}}</p>
                 <p><span>Population:</span> {{population}}</p>
                 <p><span>Region:</span> {{Region}}</p>
                 <p><span>Sub Region:</span> {{subregion}}</p>
                 <p><span>Capital:</span> {{capital}}</p>
-            </div>
+                </div>
 
             <div>
                 <p><span>Top Level Domain:</span> {{topLevelDomain}}</p>
                 <p><span>Currencies:</span> {{#each currencies}} {{code}}, {{name}}, {{symbol}} {{/each}}</p>
                 <p><span>Languages:</span> {{#each languages}} {{name}}, {{/each}}</p>
             </div>
-        </section>
+        </div>
+        
 
         <h3>Border Countries:</h3>
         <div class="flex-borders">
@@ -45,8 +47,8 @@
         
         <div><p>{{this}}</p></div>
         
-        {{/each}}
-    </div>
+        {{/each}}</div></div>
+    </section>
     </script>
         </div>
     </main>

@@ -66,7 +66,7 @@ fetch('https://restcountries.com/v2/all')
         //Buscador
         buscar.addEventListener('input', () => {
             if (!buscar.value == '') {
-                let data = datos.data.filter(pais => pais.name == buscar.value);
+                let data = datos.data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value );
                 let obj = { data };
                 handl(obj);
 
