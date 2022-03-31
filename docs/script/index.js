@@ -35,6 +35,18 @@ const handl = function (paramtero) {
     imprimir.innerHTML = compilar(paramtero);
 }
 
+//Funcion para el filtrado hacia la siguiente pagina
+const cargarDatos = function(){
+    document.querySelectorAll('h2').forEach(element => {
+        element.addEventListener('click', (e) => {
+            //console.log(e.target);
+            contenidoCard = e.target
+            localStorage.setItem('pais', contenidoCard.innerHTML);
+            window.location.href = 'pais.html';
+        })
+    });
+}
+
 let contenidoCard;
 
 //API REST
@@ -52,15 +64,7 @@ fetch('https://restcountries.com/v2/all')
             let objSelect = { data };
             handl(objSelect)
 
-            document.querySelectorAll('h2').forEach(element => {
-                element.addEventListener('click', (e) => {
-                    console.log(e.target);
-                    contenidoCard = e.target
-                    localStorage.setItem('pais', contenidoCard.innerHTML);
-                    window.location.href = 'pais.html';
-                })
-            });
-
+            cargarDatos();
 
         })
         //Buscador
@@ -70,15 +74,7 @@ fetch('https://restcountries.com/v2/all')
                 let obj = { data };
                 handl(obj);
 
-                console.log(document.querySelectorAll('.card'))
-                document.querySelectorAll('h2').forEach(element => {
-                    element.addEventListener('click', (e) => {
-                        console.log(e.target);
-                        contenidoCard = e.target
-                        localStorage.setItem('pais', contenidoCard.innerHTML);
-                        window.location.href = 'pais.html';
-                    })
-                });
+                cargarDatos();
 
             } else {
                 handl(datos);
@@ -86,14 +82,5 @@ fetch('https://restcountries.com/v2/all')
 
         });
 
-        //console.log(document.querySelectorAll('.card'))
-        document.querySelectorAll('h2').forEach(element => {
-            element.addEventListener('click', (e) => {
-                contenidoCard = e.target;
-                console.log(contenidoCard.innerHTML);
-                localStorage.setItem('pais', contenidoCard.innerHTML);
-                window.location.href = 'pais.html';
-            })
-        });
-
+        cargarDatos();
     })
