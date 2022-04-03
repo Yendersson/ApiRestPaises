@@ -30,23 +30,6 @@ document.querySelector('#dark-mode').addEventListener('click', () => {
     }
 })
 
-//Funcion Handlebars
-const handl = function (paramtero) {
-    imprimir.innerHTML = compilar(paramtero);
-}
-
-//Funcion para el filtrado hacia la siguiente pagina
-const cargarDatos = function(){
-    document.querySelectorAll('h2').forEach(element => {
-        element.addEventListener('click', (e) => {
-            //console.log(e.target);
-            contenidoCard = e.target
-            localStorage.setItem('pais', contenidoCard.innerHTML);
-            window.location.href = 'pais.html';
-        })
-    });
-}
-
 let contenidoCard;
 
 //API REST

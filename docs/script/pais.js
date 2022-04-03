@@ -1,5 +1,5 @@
 let pais = localStorage.getItem('pais');
-localStorage.removeItem('pais');
+
 let click = 0;
 
 const template = document.querySelector('#template').innerHTML;
@@ -7,13 +7,9 @@ console.log(template)
 const compilar = Handlebars.compile(template);
 const imprimir = document.querySelector('#handlebar');
 
-//Funcion Handlebars
-const handl = function (paramtero) {
-    imprimir.innerHTML = compilar(paramtero);
-}
-
 document.querySelector('#regresar').addEventListener('click', ()=>{
     window.location.href = 'index.html'
+    localStorage.removeItem('pais');
 })
 
 document.querySelector('#dark-mode').addEventListener('click', () => {
