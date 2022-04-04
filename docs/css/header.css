@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-*{
-    box-sizing: border-box;
-}
+*{ box-sizing: border-box;}
 
 body{
     margin: 0;
-    background-color: hsl(0, 0%, 98%);
+    /*background-color: hsl(0, 0%, 98%);*/
     font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -15,17 +13,15 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 20px 40px;
+    padding: 10px 40px;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    position: sticky;
+    top: 0;
 }
 
-img:hover{
-    cursor: pointer;
-}
+img:hover{ cursor: pointer;}
 
-h1{
-    font-size: 1.2rem;
-}
+h1{ font-size: 1.2rem;}
 
 #dark-mode{
     display: flex;
@@ -38,13 +34,9 @@ h1{
     margin-right: 5px ;
 }
 
-#dark-mode:hover{
-    cursor: pointer;
-}
+#dark-mode:hover{ cursor: pointer;}
 
 @media (min-width: 768px){
 
-    h1{
-        font-size: 1.5rem;
-    }
+    h1{ font-size: 1.5rem;}
 }

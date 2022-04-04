@@ -1,7 +1,6 @@
 let pais = localStorage.getItem('pais');
 
-let click = 0;
-
+//compilando handlebars
 const template = document.querySelector('#template').innerHTML;
 console.log(template)
 const compilar = Handlebars.compile(template);
@@ -12,28 +11,7 @@ document.querySelector('#regresar').addEventListener('click', ()=>{
     localStorage.removeItem('pais');
 })
 
-document.querySelector('#dark-mode').addEventListener('click', () => {
-
-    click++;
-
-    switch (click) {
-        case 1:
-            document.body.style.backgroundColor = 'hsl(207, 26%, 17%)';
-            document.body.style.color = 'white'
-            document.querySelector('#moon').src = `img/moon-outline.svg`;
-            document.querySelector('header').style.backgroundColor = 'hsl(209, 23%, 22%)';
-            break;
-
-        case 2:
-            document.body.style.backgroundColor = 'white';
-            document.body.style.color = 'black'
-            document.querySelector('header').style.backgroundColor = 'white'
-            document.querySelector('#moon').src = `img/moon.svg`
-            click = 0;
-            break;
-    }
-})
-
+//API Fetch
 fetch('https://restcountries.com/v2/name/'+pais)
 .then(res => res.json())
 .then(data=>{

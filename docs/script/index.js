@@ -1,34 +1,13 @@
+//compilando Handlebars
 const template = document.querySelector('#template').innerHTML;
 console.log(template)
 const compilar = Handlebars.compile(template);
 const imprimir = document.querySelector('#templates-countries');
+
+//etiquetas
 let buscar = document.querySelector('#buscador');
 
 let desplegar = document.querySelector('#filtrar');
-let click = 0;
-
-//darkMode
-document.querySelector('#dark-mode').addEventListener('click', () => {
-
-    click++;
-
-    switch (click) {
-        case 1:
-            document.body.style.backgroundColor = 'hsl(207, 26%, 17%)';
-            document.body.style.color = 'white'
-            document.querySelector('#moon').src = `img/moon-outline.svg`;
-            document.querySelector('header').style.backgroundColor = 'hsl(209, 23%, 22%)';
-            break;
-
-        case 2:
-            document.body.style.backgroundColor = 'white';
-            document.body.style.color = 'black'
-            document.querySelector('header').style.backgroundColor = 'white'
-            document.querySelector('#moon').src = `img/moon.svg`
-            click = 0;
-            break;
-    }
-})
 
 let contenidoCard;
 
@@ -53,7 +32,7 @@ fetch('https://restcountries.com/v2/all')
         //Buscador
         buscar.addEventListener('input', () => {
             if (!buscar.value == '') {
-                let data = datos.data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value );
+                let data = datos.data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value);
                 let obj = { data };
                 handl(obj);
 
