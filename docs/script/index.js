@@ -16,15 +16,14 @@ fetch('https://restcountries.com/v2/all')
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        const datos = { data };
-        console.log(datos);
-        handl(datos);
+        //const datos = { data };
+        handl(data);
 
         //Select filtrar por region
         desplegar.addEventListener('change', () => {
-            let data = datos.data.filter(pais => pais.region == desplegar.value);
-            let objSelect = { data };
-            handl(objSelect)
+            let datos = data.filter(pais => pais.region == desplegar.value);
+            //let objSelect = datos;
+            handl(datos)
 
             cargarDatos();
 
@@ -32,14 +31,14 @@ fetch('https://restcountries.com/v2/all')
         //Buscador
         buscar.addEventListener('input', () => {
             if (!buscar.value == '') {
-                let data = datos.data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value);
-                let obj = { data };
-                handl(obj);
+                let datos = data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value);
+                //let obj = { data };
+                handl(datos);
 
                 cargarDatos();
 
             } else {
-                handl(datos);
+                handl(data);
             }
 
         });
