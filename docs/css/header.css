@@ -13,7 +13,7 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 10px 40px;
+    padding: 10px 30px;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     position: sticky;
     top: 0;
@@ -21,8 +21,11 @@ header{
 
 img:hover{ cursor: pointer;}
 
-h1{ font-size: 1.2rem;}
+h1{ font-size: 1.1rem;}
 
+header span{
+    font-size: 0.9rem;
+}
 #dark-mode{
     display: flex;
     justify-content: center;

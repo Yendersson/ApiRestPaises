@@ -24,9 +24,7 @@ fetch('https://restcountries.com/v2/all')
             let datos = data.filter(pais => pais.region == desplegar.value);
             //let objSelect = datos;
             handl(datos)
-
-            cargarDatos();
-
+            
         })
         //Buscador
         buscar.addEventListener('input', () => {

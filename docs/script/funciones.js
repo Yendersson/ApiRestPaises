@@ -13,6 +13,7 @@ const cargarDatos = function () {
 //Funcion Handlebars
 const handl = function (paramtero) {
     imprimir.innerHTML = compilar(paramtero);
+
 }
 
 
@@ -34,3 +35,4 @@ const dark_mode = function () {
     document.querySelector('header').style.backgroundColor = 'hsl(209, 23%, 22%)';
     document.querySelectorAll('.card').forEach(elementos => elementos.style.backgroundColor = 'hsl(209, 23%, 22%)');
 }
+
