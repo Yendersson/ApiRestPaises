@@ -24,12 +24,14 @@ fetch('https://restcountries.com/v2/all')
             let datos = data.filter(pais => pais.region == desplegar.value);
             //let objSelect = datos;
             handl(datos)
+
+            cargarDatos()
             
         })
         //Buscador
         buscar.addEventListener('input', () => {
             if (!buscar.value == '') {
-                let datos = data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value);
+                let datos = data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value || pais.alpha2Code == buscar.value);
                 //let obj = { data };
                 handl(datos);
 
