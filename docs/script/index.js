@@ -29,6 +29,7 @@ fetch('https://restcountries.com/v2/all')
             
         })
         //Buscador
+        buscar.addEventListener('click', ()=> alert('Al filtrar un pais la primera letra debe estar en mayusculas. Ejemplo: "Argentina"'))
         buscar.addEventListener('input', () => {
             if (!buscar.value == '') {
                 let datos = data.filter(pais => pais.name == buscar.value || pais.nativeName == buscar.value || pais.alpha2Code == buscar.value);
